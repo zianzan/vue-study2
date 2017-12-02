@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        //vue本身并不具备发送ajax请求的能力
+
+        //我们之前学过的工具JQuery是可以用来发送ajax请求的，但是，jQuery的强项在于DOM操作，而在vue中完全不需要DOM操作，那么如果把jQuery引入到项目中只为做ajax请求，就得不偿失了！
+
+        //所以，在vue不会使用jQuery来发送ajax请求！
+
+
+        //要在vue中发送ajax请求，有两个工具
+        //1. Vue官方推出的插件  vue-resource (这个插件已经不再维护)
+        //2. axios
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+            }
+        })
+    </script>
+</body>
+
+</html>

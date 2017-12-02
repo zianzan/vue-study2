@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+
+    <script>
+        
+        var obj = {
+            name: ""
+        }
+
+        //实现双向绑定
+        //1. 元素内容变化，数据变化
+
+        // var txt = document.getElementById("txt");
+        // txt.oninput = function(){
+        //     obj.name = this.value;
+        // }
+
+        //2. 数据发生变化，文本框中的内容也要随之变化
+        //Object.defineProperty
+        Object.defineProperty(obj, "name", {
+            get: function(){
+                return this._name;
+            },
+            set: function(value){
+                this._name = value;
+                //当别人为属性赋值的时候，我们需要将这个值同步更新页面中的文本框中去
+                txt.value = this._name;
+            }
+        });
+        
+
+
+    </script>
+</body>
+</html>
